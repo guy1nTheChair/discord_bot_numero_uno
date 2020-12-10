@@ -1,7 +1,9 @@
 import discord
 from discord.ext import commands
 import random
+import os
 
+token = os.enviro['bot_token']
 intents = discord.Intents(messages = True, guilds = True, reactions = True, members = True, presences = True)
 client = commands.Bot(command_prefix = '.', intents = intents)
 
@@ -69,4 +71,4 @@ async def unban(ctx, member: discord.Member, *, reason="you've been banned lmao!
     #await member.ban(reason=reason)
     #await ctx.send(f'{member} {reason}')
 
-client.run('Nzg2NjIzODU4ODgxOTg2NTcw.X9JGjg.Gqx7lCkfq5zfnEYoAJgg1fWxaSc')
+client.run(token)
